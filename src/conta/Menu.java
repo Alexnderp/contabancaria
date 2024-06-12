@@ -1,5 +1,6 @@
 package conta;
 
+import conta.model.Conta;
 import conta.util.Cores;
 
 import java.util.Scanner;
@@ -8,11 +9,18 @@ public class Menu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
+        c1.view();
+        c1.withdraw(12000.0f);
+        c1.view();
+        c1.deposit(5000.0f);
+        c1.view();
+
 
         int option;
         while (true){
             System.out.printf("""
-                    %s %s*********************************************************
+                    %s%s*********************************************************
                     
                                         Generation Bank
                     
