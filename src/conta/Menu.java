@@ -1,6 +1,7 @@
 package conta;
 
-import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 import java.util.Scanner;
@@ -9,12 +10,20 @@ public class Menu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
-        c1.view();
-        c1.withdraw(12000.0f);
-        c1.view();
-        c1.deposit(5000.0f);
-        c1.view();
+
+        ContaCorrente cc1 = new ContaCorrente(1, 123, 1, "José da Silva", 0.0f, 1000.0f);
+        cc1.view();
+        cc1.withdraw(12000.0f);
+        cc1.view();
+        cc1.deposit(5000.0f);
+        cc1.view();
+
+        ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
+        cp1.view();
+        cp1.withdraw(1000.0f);
+        cp1.view();
+        cp1.deposit(5000.0f);
+        cp1.view();
 
 
         int option;
