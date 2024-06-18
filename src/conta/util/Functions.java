@@ -1,6 +1,9 @@
 package conta.util;
 
+import conta.model.Conta;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Functions {
     public static void sobre() {
@@ -25,5 +28,12 @@ public class Functions {
 
     public static int generateNumber(){
         return (int) (Math.random() * 99999) +1;
+    }
+
+    public static Conta searchByNumber(int number, ArrayList<Conta> accounts){
+        Conta result = accounts.stream().filter(account -> account.getNumber() == number)
+                .findAny()
+                .orElse(null);
+        return result;
     }
 }

@@ -68,7 +68,7 @@ public abstract class Conta {
         return true;
     }
 
-    public void deposit(float value) {
+    public void deposit(double value) {
 
         this.setBalance(this.getBalance() + value);
 
