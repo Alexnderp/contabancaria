@@ -70,8 +70,8 @@ public class Menu {
                     do {
                         System.out.println("Informe o tipo da conta: (1 - CC ou 2 - CP) ");
                         type = sc.nextInt();
-                        if (type < 1 && type > 2) System.out.println("Tipo de conta invalido!");
-                    }while (type < 1 && type > 2);
+                        if (type < 1 || type > 2) System.out.println("Tipo de conta invalido!");
+                    }while (type < 1 || type > 2);
 
                     System.out.println("Informe o saldo da conta: ");
                     balance = sc.nextDouble();

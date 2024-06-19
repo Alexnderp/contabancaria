@@ -4,6 +4,7 @@ import conta.model.Conta;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Functions {
     public static void sobre() {
@@ -15,15 +16,19 @@ public class Functions {
     }
 
     public static void keyPress() {
-        try {
+        String line;
+        do {
+            Scanner scanner = new Scanner(System.in);
             System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar...");
-            char c = (char) System.in.read();
-            if (Character.isLetterOrDigit(c)) {
-                throw new IOException("Você pressionou uma tecla diferente de enter!");
+             line = scanner.nextLine();
+            if (!line.trim().equals("")) {
+                try {
+                    throw new IOException("Você pressionou uma tecla diferente de enter!");
+                } catch (IOException e) {
+                    System.out.println("Você pressionou uma tecla diferente de enter!");
+                }
             }
-        } catch (IOException e) {
-            System.out.println("Você pressionou uma tecla diferente de enter!");
-        }
+        }while (!line.trim().equals(""));
     }
 
     public static int generateNumber(){
